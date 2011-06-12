@@ -1,12 +1,6 @@
--- -----------------------------------------------------------------------------
--- File::      $URL: svn://psdkrkportos2.dev.sabre.com/sacdba/trunk/sql/login.sql $
--- Author::    Dariusz Owczarek (mailto:dariusz.owczarek@sabre.com)
--- Copyright:: Copyright (C) 2007 Sabre Holdings
--- -----------------------------------------------------------------------------
--- = Overview
--- * SQL*Plus login script
---------------------------------------------------------------------------------
--- $Id: login.sql 2141 2009-12-14 11:52:32Z hybdba $
+-- ----------------------------------------------------------------------------
+-- Description  : SQL*Plus login script
+-- ----------------------------------------------------------------------------
 
 -- set to terminal width - 1 or 999 for unlimited horizontal scrolling in terminal
 set linesize 159
@@ -30,8 +24,10 @@ set arraysize 100
 set verify off
 set tab off
 set trimspool on
-set trimsout on
+set trimout on
 set numformat 999,999,999
+
+column null NULL "-=null=-"
 
 variable n number
 variable v varchar2(4000)
@@ -83,8 +79,8 @@ def _tpt_tempfile=sqlplus_tmpfile
 col seminar_logfile new_value seminar_logfile
 col tpt_tempfile new_value _tpt_tempfile
 
-select 
-    to_char(sysdate, 'YYYYMMDD-HH24MISS') seminar_logfile 
+select
+    to_char(sysdate, 'YYYYMMDD-HH24MISS') seminar_logfile
   , instance_name||'-'||to_char(sysdate, 'YYYYMMDD-HH24MISS') tpt_tempfile
 from v$instance;
 
@@ -94,7 +90,7 @@ def seminar_logfile=$HOME/tmp/&_tpt_tempfile..log
 spool &seminar_logfile append
 
 -- set sqlprompt "&_USER'@'&_CONNECT_IDENTIFIER> "
--- i.sql is the "who am i" script which shows your session/instance info and 
+-- i.sql is the "who am i" script which shows your session/instance info and
 -- also sets command prompt window/xterm title
 @@tpt_public_unixmac/i.sql
 

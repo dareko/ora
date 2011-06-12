@@ -1,14 +1,12 @@
 -- ----------------------------------------------------------------------------
--- File         : $URL: https://anydba.googlecode.com/svn/trunk/sql/qtemplate.sql $
--- Author       : Dariusz Owczarek (mailto:darek@edba.eu)
--- ----------------------------------------------------------------------------
 -- Description  : Selects <D>
 -- Parameters   : 1 - fully qualified name like
 --                2 - database link
 --                3 - rows limit
 -- Requirements : Access to dbms_metadata and the all views
 -- ----------------------------------------------------------------------------
--- Copyright    : Copyright (c) 2007 Dariusz Owczarek. All rights reserved. 
+-- Author       : Dariusz Owczarek (mailto:darek@edba.eu)
+-- Copyright    : Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 
 --                This file is part of Quality Oracle Scripts.
 --                Quality Oracle Scripts is free software;
 --                you can redistribute it and/or modify it under the terms
@@ -18,7 +16,6 @@
 -- Notes        : This software is provided "AS IS" without warranty
 -- 		            of any kind, express or implied.
 -- ----------------------------------------------------------------------------
--- $Id: qtemplate.sql 74 2009-04-08 22:52:11Z dowczarek $
 
 column string format a9
 column number format 999G999
