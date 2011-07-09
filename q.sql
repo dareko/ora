@@ -1,15 +1,11 @@
 --+------------------------------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 -- Scripts
-==========
+----------
 -- ------------------------------------------------------------------------------------------------
 -- Name         : Q
------------------
 -- Description  : Master script
------------------
 -- Parameters   : 1 - script name
------------------
---              : 1 - script name
 --              : 2 - fully qualified name like
 --              : 3 - optional: database link
 --              : 4 - optional: rows limit
@@ -68,7 +64,7 @@ Installation
 Usage
 -----
 
-        @q <command> <condition> <db_link> <num_rows_limit>
+    @q <command> <condition> <db_link> <num_rows_limit>
 
 [1]: http://www.edba.eu     "www.edba.eu"
 */

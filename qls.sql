@@ -1,10 +1,9 @@
 --+------------------------------------------------------------------------------------------------
--- Name         : LS
--------
--- Description  : DB objects list
--- Parameters   : 1 - fully qualified name like (/TYPE/SCHEMA/NAME)
---              : 2 - optional: database link
---              : 3 - optional: rows limit
+  -- Name         : LS
+  -- Description  : DB objects list
+  -- Parameters   : 1 - fully qualified name like (/TYPE/SCHEMA/NAME)
+  --              : 2 - optional: database link
+  --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
 -- Author       : Dariusz Owczarek (mailto:dariusz.owczarek@edba.eu)
 -- Copyright    : Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 

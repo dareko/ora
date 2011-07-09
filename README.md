@@ -27,7 +27,7 @@ Installation
 Usage
 -----
 
-        @q <command> <condition> <db_link> <num_rows_limit>
+    @q <command> <condition> <db_link> <num_rows_limit>
 
 [1]: http://www.edba.eu     "www.edba.eu"
 
@@ -42,15 +42,11 @@ of the [Creative Commons Attribution 3.0 Unported license] [2].
 [2]: http://creativecommons.org/licenses/by/3.0/     "CC BY 3.0"
 -- ------------------------------------------------------------------------------------------------
 -- Scripts
-==========
+----------
 -- ------------------------------------------------------------------------------------------------
 -- Name         : Q
------------------
 -- Description  : Master script
------------------
 -- Parameters   : 1 - script name
------------------
---              : 1 - script name
 --              : 2 - fully qualified name like
 --              : 3 - optional: database link
 --              : 4 - optional: rows limit
@@ -83,12 +79,11 @@ of the [Creative Commons Attribution 3.0 Unported license] [2].
 --              : 2 - optional: database link
 --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
--- Name         : LS
--------
--- Description  : DB objects list
--- Parameters   : 1 - fully qualified name like (/TYPE/SCHEMA/NAME)
---              : 2 - optional: database link
---              : 3 - optional: rows limit
+  -- Name         : LS
+  -- Description  : DB objects list
+  -- Parameters   : 1 - fully qualified name like (/TYPE/SCHEMA/NAME)
+  --              : 2 - optional: database link
+  --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
 -- Name         : LSG
 -- Description  : DB privileges list
