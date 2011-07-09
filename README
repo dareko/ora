@@ -43,17 +43,15 @@ a free software; you can redistribute it and/or adapt it under the terms
 of the [Creative Commons Attribution 3.0 Unported license] [1].
 
 [1]: http://creativecommons.org/licenses/by/3.0/     "CC BY 3.0"
+
+-- -------------------------------------------------------------------------------------------------
 -- Name         : Q
 -- Description  : Master script for calling all others
 -- Parameters   : 1 - script name
 --              : 2 - fully qualified name like
 --              : 3 - optional: database link
 --              : 4 - optional: rows limit
--- >-----------------------------------------------------------------------------------------------
-
-/*LICENSE:
-
-License and Copyright
+-- ------------------------------------------------------------------------------------------------
 
 Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 
 This file is part of Quality Oracle Scripts. The Quality Oracle Scripts is
@@ -62,6 +60,7 @@ of the [Creative Commons Attribution 3.0 Unported license] [1].
 
 [1]: http://creativecommons.org/licenses/by/3.0/     "CC BY 3.0"
 
+-- -------------------------------------------------------------------------------------------------
 */
 
 /*OVERVIEW:
@@ -161,9 +160,8 @@ undefine q_dba_script
 set feedback on
 set timing on
 set heading on
--- <-----------------------------------------------------------------------------------------------
 -- Description  : DB AWR statistics
--- >-----------------------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------
 -- Name         : LS
 -- Description  : DB objects list
 -- Parameters   : 1 - fully qualified name like (/OBJECT_TYPE/SCHEMA/NAME)
