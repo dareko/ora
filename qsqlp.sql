@@ -1,7 +1,7 @@
--- ------------------------------------------------------------------------------------------------
--- Name         : Q
--- Description  : Quality Oracle Scripts template
--- Parameters   : 1 - fully qualified name like
+--+------------------------------------------------------------------------------------------------
+-- Name         : SQLP
+-- Description  : Execution plans for SQL_ID
+-- Parameters   : 1 - SQL_ID
 --              : 2 - optional: database link
 --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
@@ -15,18 +15,16 @@
 -- 		            of any kind, express or implied.
 -- ------------------------------------------------------------------------------------------------
 
---column string format a9
---column number format 999G999
---column null null -=null=-
-
---break on c1 skip page
---compute sum count of c2 on c1
-
-select ...
-from ...
-where
-  regexp_like('&param', '^.a{1,2}.+$', 'i');
+/* Q SQLP */
+with q as
+(
+select s.sql_id, s.child_number
+from v$sql&&2 s
+order by s.sql_id, s.child_number
+)
+select p.plan_table_output fqname
+from q, table(dbms_xplan.display_cursor(sql_id, child_number, 'ALLSTATS LAST +PEEKED_BINDS +PARTITION')) p
+where sql_id = '&&1'
+order by sql_id, child_number
+/* Q END */
 ;
-
---clear computes
---clear breaks
