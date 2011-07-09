@@ -52,12 +52,8 @@ of the [Creative Commons Attribution 3.0 Unported license] [2].
 --              : 4 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
 -- Name         : DESC
------------------
 -- Description  : DB objects description
------------------
--- Parameters   :
------------------
---              : 1 - fully qualified name like (/SCHEMA/TYPE/NAME)
+-- Parameters   : 1 - fully qualified name like (/SCHEMA/TYPE/NAME)
 --              : 2 - optional: database link
 --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
@@ -79,11 +75,11 @@ of the [Creative Commons Attribution 3.0 Unported license] [2].
 --              : 2 - optional: database link
 --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
-  -- Name         : LS
-  -- Description  : DB objects list
-  -- Parameters   : 1 - fully qualified name like (/TYPE/SCHEMA/NAME)
-  --              : 2 - optional: database link
-  --              : 3 - optional: rows limit
+    -- Name         : LS
+    -- Description  : DB objects list
+    -- Parameters   : 1 - fully qualified name like (/TYPE/SCHEMA/NAME)
+    --              : 2 - optional: database link
+    --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
 -- Name         : LSG
 -- Description  : DB privileges list

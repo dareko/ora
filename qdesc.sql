@@ -1,11 +1,7 @@
 --+------------------------------------------------------------------------------------------------
 -- Name         : DESC
------------------
 -- Description  : DB objects description
------------------
--- Parameters   :
------------------
---              : 1 - fully qualified name like (/SCHEMA/TYPE/NAME)
+-- Parameters   : 1 - fully qualified name like (/SCHEMA/TYPE/NAME)
 --              : 2 - optional: database link
 --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
