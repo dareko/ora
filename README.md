@@ -44,36 +44,36 @@ of the [Creative Commons Attribution 3.0 Unported license] [2].
 -- Scripts
 ----------
 -- ------------------------------------------------------------------------------------------------
--- Name         : Q
--- Description  : Master script
--- Parameters   : 1 - script name
---              : 2 - fully qualified name like
---              : 3 - optional: database link
---              : 4 - optional: rows limit
+    -- Name         : Q
+    -- Description  : Master script
+    -- Parameters   : 1 - script name
+    --              : 2 - fully qualified name like
+    --              : 3 - optional: database link
+    --              : 4 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
--- Name         : DESC
--- Description  : DB objects description
--- Parameters   : 1 - fully qualified name like (/SCHEMA/TYPE/NAME)
---              : 2 - optional: database link
---              : 3 - optional: rows limit
+    -- Name         : DESC
+    -- Description  : DB objects description
+    -- Parameters   : 1 - fully qualified name like (/SCHEMA/TYPE/NAME)
+    --              : 2 - optional: database link
+    --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
--- Name         : DF
--- Description  : DB schema size
--- Parameters   : 1 - fully qualified name like (/SCHEMA/TYPE/NAME)
---              : 2 - optional: database link
---              : 3 - optional: rows limit
+    -- Name         : DF
+    -- Description  : DB schema size
+    -- Parameters   : 1 - fully qualified name like (/SCHEMA/TYPE/NAME)
+    --              : 2 - optional: database link
+    --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
--- Name         : JOBS
--- Description  : DB scheduler jobs listing
--- Parameters   : 1 - fully qualified name like (/OWNER/NAME/SUBNAME)
---              : 2 - optional: database link
---              : 3 - optional: rows limit
+    -- Name         : JOBS
+    -- Description  : DB scheduler jobs listing
+    -- Parameters   : 1 - fully qualified name like (/OWNER/NAME/SUBNAME)
+    --              : 2 - optional: database link
+    --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
--- Name         : KILL
--- Description  : DB sessions with kill seesion statements
--- Parameters   : 1 - fully qualified name like (/SERVICE/INSTANCE/USER/OSUSER/MACHINE)
---              : 2 - optional: database link
---              : 3 - optional: rows limit
+    -- Name         : KILL
+    -- Description  : DB sessions with kill seesion statements
+    -- Parameters   : 1 - fully qualified name like (/SERVICE/INSTANCE/USER/OSUSER/MACHINE)
+    --              : 2 - optional: database link
+    --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
     -- Name         : LS
     -- Description  : DB objects list
@@ -81,33 +81,33 @@ of the [Creative Commons Attribution 3.0 Unported license] [2].
     --              : 2 - optional: database link
     --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
--- Name         : LSG
--- Description  : DB privileges list
--- Parameters   : 1 - fully qualified name like (/GRANTEE/PRIVILEGE/OWNER)
---              : 2 - optional: database link
---              : 3 - optional: rows limit
+    -- Name         : LSG
+    -- Description  : DB privileges list
+    -- Parameters   : 1 - fully qualified name like (/GRANTEE/PRIVILEGE/OWNER)
+    --              : 2 - optional: database link
+    --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
--- Name         : PS
--- Description  : DB sessions - inactive/active with longops info
--- Parameters   : 1 - fully qualified name like (/SERVICE/SERVER/INSTANCE/USER/OSUSER/MACHINE)
---              : 2 - optional: database link
---              : 3 - optional: rows limit
+    -- Name         : PS
+    -- Description  : DB sessions - inactive/active with longops info
+    -- Parameters   : 1 - fully qualified name like (/SERVICE/SERVER/INSTANCE/USER/OSUSER/MACHINE)
+    --              : 2 - optional: database link
+    --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
--- Name         : SQL
--- Description  : DB queries with search on sql_text (not sql_fulltext)
--- Parameters   : 1 - fully qualified name like (/SERVICE/INSTANCE/USER/MODULE/PROFILE)
---              : 2 - optional: database link
---              : 3 - optional: rows limit
+    -- Name         : SQL
+    -- Description  : DB queries with search on sql_text (not sql_fulltext)
+    -- Parameters   : 1 - fully qualified name like (/SERVICE/INSTANCE/USER/MODULE/PROFILE)
+    --              : 2 - optional: database link
+    --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
--- Name         : SQLBL
--- Description  : SQL baselines
--- Parameters   : 1 - fully qualified name like (/USER/MODULE)
---              : 2 - optional: database link
---              : 3 - optional: rows limit
+    -- Name         : SQLBL
+    -- Description  : SQL baselines
+    -- Parameters   : 1 - fully qualified name like (/USER/MODULE)
+    --              : 2 - optional: database link
+    --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
--- Name         : SQLP
--- Description  : Execution plans for SQL_ID
--- Parameters   : 1 - SQL_ID
---              : 2 - optional: database link
---              : 3 - optional: rows limit
+    -- Name         : SQLP
+    -- Description  : Execution plans for SQL_ID
+    -- Parameters   : 1 - SQL_ID
+    --              : 2 - optional: database link
+    --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------

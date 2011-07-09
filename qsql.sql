@@ -1,9 +1,9 @@
 --+------------------------------------------------------------------------------------------------
--- Name         : SQL
--- Description  : DB queries with search on sql_text (not sql_fulltext)
--- Parameters   : 1 - fully qualified name like (/SERVICE/INSTANCE/USER/MODULE/PROFILE)
---              : 2 - optional: database link
---              : 3 - optional: rows limit
+    -- Name         : SQL
+    -- Description  : DB queries with search on sql_text (not sql_fulltext)
+    -- Parameters   : 1 - fully qualified name like (/SERVICE/INSTANCE/USER/MODULE/PROFILE)
+    --              : 2 - optional: database link
+    --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
 -- Author       : Dariusz Owczarek (mailto:dariusz.owczarek@edba.eu)
 -- Copyright    : Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 

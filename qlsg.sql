@@ -1,9 +1,9 @@
 --+------------------------------------------------------------------------------------------------
--- Name         : LSG
--- Description  : DB privileges list
--- Parameters   : 1 - fully qualified name like (/GRANTEE/PRIVILEGE/OWNER)
---              : 2 - optional: database link
---              : 3 - optional: rows limit
+    -- Name         : LSG
+    -- Description  : DB privileges list
+    -- Parameters   : 1 - fully qualified name like (/GRANTEE/PRIVILEGE/OWNER)
+    --              : 2 - optional: database link
+    --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
 -- Author       : Dariusz Owczarek (mailto:dariusz.owczarek@edba.eu)
 -- Copyright    : Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 

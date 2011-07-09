@@ -1,9 +1,9 @@
 -- ------------------------------------------------------------------------------------------------
--- Name         : KILL
--- Description  : DB sessions with kill seesion statements
--- Parameters   : 1 - fully qualified name like (/SERVICE/INSTANCE/USER/OSUSER/MACHINE)
---              : 2 - optional: database link
---              : 3 - optional: rows limit
+    -- Name         : KILL
+    -- Description  : DB sessions with kill seesion statements
+    -- Parameters   : 1 - fully qualified name like (/SERVICE/INSTANCE/USER/OSUSER/MACHINE)
+    --              : 2 - optional: database link
+    --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
 -- Author       : Dariusz Owczarek (mailto:dariusz.owczarek@edba.eu)
 -- Copyright    : Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 
