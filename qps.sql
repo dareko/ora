@@ -1,7 +1,7 @@
 --+------------------------------------------------------------------------------------------------
 -- Name         : PS
 -- Description  : DB sessions - inactive/active with longops info
--- Parameters   : 1 - fully qualified name like (/DB_SERVICE/SERVER/INSTANCE/USER/OSUSER/MACHINE)
+-- Parameters   : 1 - fully qualified name like (/SERVICE/SERVER/INSTANCE/USER/OSUSER/MACHINE)
 --              : 2 - optional: database link
 --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
@@ -12,7 +12,7 @@
 --                you can redistribute it and/or adapt it under the terms
 --                of the Creative Commons Attribution 3.0 Unported license.
 -- Notes        : This software is provided "AS IS" without warranty
--- 		            of any kind, express or implied.
+--                of any kind, express or implied.
 -- ------------------------------------------------------------------------------------------------
 
 with q as

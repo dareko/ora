@@ -12,7 +12,7 @@
 --                you can redistribute it and/or adapt it under the terms
 --                of the Creative Commons Attribution 3.0 Unported license.
 -- Notes        : This software is provided "AS IS" without warranty
--- 		            of any kind, express or implied.
+--                of any kind, express or implied.
 -- ------------------------------------------------------------------------------------------------
 
 --column string format a9

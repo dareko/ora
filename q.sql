@@ -1,10 +1,28 @@
--- <-----------------------------------------------------------------------------------------------
--- Description  : Master script for calling all others
+--+------------------------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------
+-- Scripts
+==========
+-- ------------------------------------------------------------------------------------------------
+-- Name         : Q
+-----------------
+-- Description  : Master script
+-----------------
 -- Parameters   : 1 - script name
+-----------------
+--              : 1 - script name
 --              : 2 - fully qualified name like
 --              : 3 - optional: database link
 --              : 4 - optional: rows limit
--- >-----------------------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------
+-- Author       : Dariusz Owczarek (mailto:dariusz.owczarek@edba.eu)
+-- Copyright    : Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 
+--                This file is part of Quality Oracle Scripts.
+--                The Quality Oracle Scripts is a free software;
+--                you can redistribute it and/or adapt it under the terms
+--                of the Creative Commons Attribution 3.0 Unported license.
+-- Notes        : This software is provided "AS IS" without warranty
+--                of any kind, express or implied.
+-- ------------------------------------------------------------------------------------------------
 
 /*LICENSE:
 
@@ -14,9 +32,10 @@ License and Copyright
 Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 
 This file is part of Quality Oracle Scripts. The Quality Oracle Scripts is
 a free software; you can redistribute it and/or adapt it under the terms
-of the [Creative Commons Attribution 3.0 Unported license] [1].
+of the [Creative Commons Attribution 3.0 Unported license] [2].
 
-[1]: http://creativecommons.org/licenses/by/3.0/     "CC BY 3.0"
+[2]: http://creativecommons.org/licenses/by/3.0/     "CC BY 3.0"
+
 */
 
 /*OVERVIEW:
@@ -41,6 +60,8 @@ Installation
 
   - Open ``$HOME/ora/login.sql`` login script and modify if needed.
 
+  - (OPTIONAL) Create database links in order to query several DBs without reconnecting
+
   - Using ``SQL*Plus``, log on as user who has ``DBA`` or ``SELECT_CATALOG_ROLE``
   privileges.
 
@@ -49,11 +70,6 @@ Usage
 
         @q <command> <condition> <db_link> <num_rows_limit>
 
-Help
-----
-
-``@q help`` command is your friend!
-  
 [1]: http://www.edba.eu     "www.edba.eu"
 */
 

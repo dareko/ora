@@ -1,5 +1,6 @@
 --+------------------------------------------------------------------------------------------------
 -- Name         : LS
+-------
 -- Description  : DB objects list
 -- Parameters   : 1 - fully qualified name like (/TYPE/SCHEMA/NAME)
 --              : 2 - optional: database link
@@ -12,7 +13,7 @@
 --                you can redistribute it and/or adapt it under the terms
 --                of the Creative Commons Attribution 3.0 Unported license.
 -- Notes        : This software is provided "AS IS" without warranty
--- 		            of any kind, express or implied.
+--                of any kind, express or implied.
 -- ------------------------------------------------------------------------------------------------
 
 with q as
