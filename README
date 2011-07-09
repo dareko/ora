@@ -1,0 +1,51 @@
+Quality Oracle Scripts
+======================
+
+    Version 0.1
+
+Quality Oracle Scripts is a bundle of SQL*Plus scripts for managing
+Oracle databases. For further information, see [http://www.edba.eu] [1].
+
+Installation
+------------
+
+  - Simply obtain a copy of ``ora`` directory, which may be located anywhere
+  on your system, for example in the home directory.
+
+  - Add ``ora`` directory to you SQLPATH variable:
+
+        export SQLPATH="$HOME/ora"
+
+  - Open ``$HOME/ora/login.sql`` login script and modify if needed.
+
+  - Using ``SQL*Plus``, log on as user who has ``DBA`` or ``SELECT_CATALOG_ROLE``
+  privileges.
+
+Usage
+-----
+
+        @q <command> <condition> <db_link> <num_rows_limit>
+
+Help
+----
+
+``@q help`` command is your friend!
+  
+[1]: http://www.edba.eu     "www.edba.eu"
+
+License and Copyright
+---------------------
+
+Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 
+This file is part of Quality Oracle Scripts. The Quality Oracle Scripts is
+a free software; you can redistribute it and/or adapt it under the terms
+of the [Creative Commons Attribution 3.0 Unported license] [1].
+
+[1]: http://creativecommons.org/licenses/by/3.0/     "CC BY 3.0"
+-- ------------------------------------------------------------------------------------------------
+-- Name         : Q
+-- Description  : Master script for calling all others
+-- Parameters   : 1 - script name
+--              : 2 - fully qualified name like
+--              : 3 - optional: database link
+--              : 4 - optional: rows limit
