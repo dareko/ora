@@ -19,8 +19,6 @@ Installation
 
   - Open ``$HOME/ora/login.sql`` login script and modify if needed.
 
-  - (OPTIONAL) Create database links in order to query several DBs without reconnecting
-
   - Using ``SQL*Plus``, log on as user who has ``DBA`` or ``SELECT_CATALOG_ROLE``
   privileges.
 
