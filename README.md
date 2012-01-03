@@ -39,7 +39,7 @@
     --              : 2 - optional: database link
     --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
-    -- Name         : LSG
+    -- Name         : LSCC
     -- Description  : Constraints columns list
     -- Parameters   : 1 - fully qualified name like (/SCHEMA/TABLE/INDEX/COLUMN)
     --              : 2 - optional: database link
@@ -51,7 +51,7 @@
     --              : 2 - optional: database link
     --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
-    -- Name         : LSG
+    -- Name         : LSIC
     -- Description  : Indexed columns list
     -- Parameters   : 1 - fully qualified name like (/SCHEMA/TABLE/INDEX/COLUMN)
     --              : 2 - optional: database link
@@ -69,8 +69,8 @@
     --              : 2 - optional: database link
     --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
-    -- Name         : OEMH
-    -- Description  : OEM Hourly Metrics
+    -- Name         : OEM
+    -- Description  : OEM Hourly/Daily Metrics
     -- Parameters   : 1 - fully qualified metric name like (/METRIC_NAME/KEY_NAME)
     --              : 2 - # hours or days
     --              : 3 - hour or day

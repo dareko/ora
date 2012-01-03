@@ -1,5 +1,5 @@
 -- ------------------------------------------------------------------------------------------------
--- Name         : Q
+-- Name         : H
 -- Description  : Master script sending output to HTML
 -- Parameters   : 1 - script name
 --              : 2 - fully qualified name like
