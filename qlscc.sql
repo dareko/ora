@@ -1,5 +1,5 @@
 --+------------------------------------------------------------------------------------------------
-    -- Name         : LSG
+    -- Name         : LSCC
     -- Description  : Constraints columns list
     -- Parameters   : 1 - fully qualified name like (/SCHEMA/TABLE/INDEX/COLUMN)
     --              : 2 - optional: database link
@@ -16,7 +16,7 @@
 -- ------------------------------------------------------------------------------------------------
 
 with q as
-(/* Q LSI */
+(/* Q LSCC */
 select /*+ DRIVING_SITE(p) */ c.owner, c.table_name, c.constraint_name, c.column_name, c.position
 from dba_cons_columns&&2 c
 /* Q END */)

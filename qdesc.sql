@@ -1,7 +1,7 @@
 --+------------------------------------------------------------------------------------------------
     -- Name         : DESC
     -- Description  : DB objects description
-    -- Parameters   : 1 - fully qualified name like (/SCHEMA/TYPE/NAME)
+    -- Parameters   : 1 - fully qualified name like (/TYPE/SCHEMA/NAME)
     --              : 2 - optional: database link
     --              : 3 - optional: rows limit
 -- ------------------------------------------------------------------------------------------------
@@ -34,12 +34,12 @@ select o.owner, o.object_type, o.object_name
 from all_objects o
 order by o.owner, o.object_type, o.object_name
 /* QEND */)
-select upper('/'||owner||'/'||object_type||'/'||object_name) fqname
+select upper('/'||object_type||'/'||owner||'/'||object_name) fqname
   , num_rows info
   , dbms_metadata.get_ddl(object_type, object_name, owner) dsc
 from q
 where
-  upper('/'||owner||'/'||object_type||'/'||object_name)
+  upper('/'||object_type||'/'||owner||'/'||object_name)
   like upper('%/&&1%')
   and rownum <= decode(&&3,0,rownum,&&3);
 

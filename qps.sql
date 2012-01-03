@@ -24,13 +24,12 @@ select s.service_name, i.instance_name, decode(s.server, 'DEDICATED', s.server, 
 from gv$session&&2 s
   join gv$instance&&2 i
     on i.instance_number = s.inst_id
-  left join gv$sqlarea&&2 t
+  left outer join gv$sqlarea&&2 t
     on t.sql_id = s.sql_id and t.address = s.sql_address and t.hash_value = s.sql_hash_value and t.inst_id = s.inst_id
-  left join gv$session_longops&&2 sl
+  left outer join gv$session_longops&&2 sl
     on sl.sid = s.sid and sl.serial# = s.serial# and sl.inst_id = s.inst_id
        and sl.sofar != sl.totalwork
 where s.username is not NULL and s.program not like 'oracle%' and s.program not like 'emagent%'
-  and t.sql_text not like '%/* Q PS */%'
 order by case when opname is not null then 2 when status = 'ACTIVE' then 1 else 0 end
   , s.service_name, i.instance_name, s.username, s.osuser, s.machine, s.program, s.status
 /* Q END */)

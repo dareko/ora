@@ -1,5 +1,5 @@
 --+------------------------------------------------------------------------------------------------
-    -- Name         : LSG
+    -- Name         : LSIC
     -- Description  : Indexed columns list
     -- Parameters   : 1 - fully qualified name like (/SCHEMA/TABLE/INDEX/COLUMN)
     --              : 2 - optional: database link
@@ -16,7 +16,7 @@
 -- ------------------------------------------------------------------------------------------------
 
 with q as
-(/* Q LSI */
+(/* Q LSIC */
 select /*+ DRIVING_SITE(p) */ c.table_owner, c.table_name, c.index_name, c.column_name, c.column_position
 from dba_ind_columns&&2 c
 /* Q END */)

@@ -18,12 +18,14 @@ table.data th {padding-left: 3px; padding-right: 3px; -
 </style>" -
 BODY ""
 
-spool spool.html
 set termout off
+
+spool spool.html
 list
 /
-set termout on
 spool off
+
+set termout on
 
 set markup HTML off SPOOL off ENTMAP on
 

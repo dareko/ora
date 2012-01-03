@@ -20,7 +20,7 @@ with q as
 select s.service, i.instance_name, ss.parsing_schema_name, ss.module
   , ss.sql_profile, s.child_number
   , s.sql_id
-  , ss.last_active_time, s.fetches, s.executions, s.first_load_time
+  , s.last_load_time, s.last_active_time, s.fetches, s.executions
   , s.rows_processed, s.cpu_time, s.elapsed_time, s.buffer_gets, s.disk_reads, s.sorts 
   , s.loads, s.invalidations
   --, s.is_bind_sensitive, s.is_bind_aware
@@ -41,13 +41,13 @@ select upper('/'||service||'/'||instance_name||'/'||parsing_schema_name
 	  ||', CPU_MS: '||round(cpu_time/1000)||', ELAPSED_MS: '||round(elapsed_time/1000)
 	  ||', BUFFER_GETS: ' ||buffer_gets||' DISK_READS: '||disk_reads
 	  ||', SORTS: '||sorts||chr(10)
-    ||'FIRST_LOAD: '||first_load_time
+    ||'LAST_LOAD: '||last_load_time
     ||', LAST ACTIVE: '||to_char(last_active_time, 'yyyy-mm-dd/hh24:mi:ss')
     ||', LOADS: '||loads||', INVALIDATIONS; '||invalidations
     --||chr(10)||'BIND SENS./AWARE: '||is_bind_sensitive||'/'||is_bind_aware
     ||chr(10)||sql_text dsc
 from q
-where
-  sql_text like '%&&1%' and sql_text not like '%/* Q % */%' and sql_text not like '%/* Q */%'
+where sql_id = '&&1'
+  or (sql_text like '%&&1%' and sql_text not like '%/* Q % */%' and sql_text not like '%/* Q */%')
   and rownum <= decode(&&3,0,rownum,&&3)
 ;
