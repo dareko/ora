@@ -1,9 +1,7 @@
 --+------------------------------------------------------------------------------------------------
-    -- Name         : DESC
-    -- Description  : DB objects description
-    -- Parameters   : 1 - fully qualified name like (/TYPE/SCHEMA/NAME)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Name         : DDL
+    -- Description  : DB objects DDL
+    -- Parameters   : /TYPE/SCHEMA/NAME
 -- ------------------------------------------------------------------------------------------------
 -- Author       : Dariusz Owczarek (mailto:dariusz.owczarek@edba.eu)
 -- Copyright    : Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 
@@ -28,7 +26,7 @@ end;
 /
 
 with q as
-(/* QLSX */
+(/* QDDL */
 select o.owner, o.object_type, o.object_name
   , null num_rows
 from all_objects o
@@ -41,6 +39,6 @@ from q
 where
   upper('/'||object_type||'/'||owner||'/'||object_name)
   like upper('%/&&1%')
-  and rownum <= decode(&&3,0,rownum,&&3);
+  and (&&3 = 0 or rownum <= &&3);
 
 set long 80

@@ -1,9 +1,7 @@
 --+------------------------------------------------------------------------------------------------
-    -- Name         : LSCC
-    -- Description  : Constraints columns list
-    -- Parameters   : 1 - fully qualified name like (/SCHEMA/TABLE/INDEX/COLUMN)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Name         : JOBS
+    -- Description  : DB scheduler jobs listing
+    -- Parameters   : /OWNER/NAME/SUBNAME
 -- ------------------------------------------------------------------------------------------------
 -- Author       : Dariusz Owczarek (mailto:dariusz.owczarek@edba.eu)
 -- Copyright    : Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 
@@ -16,15 +14,22 @@
 -- ------------------------------------------------------------------------------------------------
 
 with q as
-(/* Q LSCC */
-select /*+ DRIVING_SITE(p) */ c.owner, c.table_name, c.constraint_name, c.column_name, c.position
-from dba_cons_columns&&2 c
+(/* Q JOBS */
+select owner, job_name, j.job_subname, j.job_type, j.job_action, j.state, j.next_run_date
+, n.recipient, n.event, n.event_flag
+from dba_scheduler_jobs&&2 j
+  left outer join dba_scheduler_notifications&&2 n using (owner, job_name)
+order by owner, job_name, j.job_subname
 /* Q END */)
-select
-  '/'||owner||'/'||table_name||'/'||constraint_name||'/'||column_name fqname
+select upper('/'||owner||'/'||job_name||'/'||job_subname) fqname
+  , state||', NEXT: '||to_char(next_run_date, 'YYYY-MM-DD HH24:MI') info
+  , job_type||': '||job_action||chr(10)
+    ||'NOTIFICATION: '||recipient||': '
+    ||listagg(event, ', ') within group (order by event_flag) dsc
 from q
 where
-  '/'||owner||'/'||table_name||'/'||constraint_name
+  upper('/'||owner||'/'||job_name||'/'||job_subname)
   like upper('%/&&1%')
-order by owner, table_name, constraint_name, position
+group by owner, job_name, job_subname, job_type, job_action, state, next_run_date
+, recipient
 ;

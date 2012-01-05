@@ -6,9 +6,7 @@
     -- Name         : Q
     -- Description  : Master script
     -- Parameters   : 1 - script name
-    --              : 2 - fully qualified name like
-    --              : 3 - optional: database link
-    --              : 4 - optional: rows limit
+    --              : 2 - <fully qualified name like>@<optional: database link>#<optional: rows limit>
 -- ------------------------------------------------------------------------------------------------
 -- Author       : Dariusz Owczarek (mailto:dariusz.owczarek@edba.eu)
 -- Copyright    : Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 
@@ -20,7 +18,7 @@
 --                of any kind, express or implied.
 -- ------------------------------------------------------------------------------------------------
 
-define q_dba_version_scripts='sql9,kill11'
+define q_dba_version_scripts='jobs11,sql11,kill11'
 
 set linesize 159
 

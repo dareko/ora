@@ -5,69 +5,51 @@
     -- Name         : Q
     -- Description  : Master script
     -- Parameters   : 1 - script name
-    --              : 2 - fully qualified name like
-    --              : 3 - optional: database link
-    --              : 4 - optional: rows limit
+    --              : 2 - <fully qualified name like>@<optional: database link>#<optional: rows limit>
 -- ------------------------------------------------------------------------------------------------
-    -- Name         : DESC
-    -- Description  : DB objects description
-    -- Parameters   : 1 - fully qualified name like (/TYPE/SCHEMA/NAME)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Name         : DDL
+    -- Description  : DB objects DDL
+    -- Parameters   : /TYPE/SCHEMA/NAME
 -- ------------------------------------------------------------------------------------------------
     -- Name         : DF
     -- Description  : DB schema size
-    -- Parameters   : 1 - fully qualified name like (/SCHEMA/TYPE/NAME)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Parameters   : /SCHEMA/TYPE/NAME
 -- ------------------------------------------------------------------------------------------------
     -- Name         : JOBS
     -- Description  : DB scheduler jobs listing
-    -- Parameters   : 1 - fully qualified name like (/OWNER/NAME/SUBNAME)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Parameters   : /OWNER/NAME/SUBNAME
+-- ------------------------------------------------------------------------------------------------
+    -- Name         : JOBS
+    -- Description  : DB scheduler jobs listing
+    -- Parameters   : /OWNER/NAME/SUBNAME
 -- ------------------------------------------------------------------------------------------------
     -- Name         : KILL
     -- Description  : DB sessions with kill seesion statements
-    -- Parameters   : 1 - fully qualified name like (/SERVICE/INSTANCE/USER/OSUSER/MACHINE)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Parameters   : /SERVICE/INSTANCE/USER/OSUSER/MACHINE
 -- ------------------------------------------------------------------------------------------------
     -- Name         : LS
     -- Description  : DB objects list
-    -- Parameters   : 1 - fully qualified name like (/TYPE/SCHEMA/NAME)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Parameters   : /TYPE/SCHEMA/NAME
 -- ------------------------------------------------------------------------------------------------
     -- Name         : LSCC
     -- Description  : Constraints columns list
-    -- Parameters   : 1 - fully qualified name like (/SCHEMA/TABLE/INDEX/COLUMN)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Parameters   : /SCHEMA/TABLE/CONSTRAINT/COLUMN
 -- ------------------------------------------------------------------------------------------------
     -- Name         : LSG
     -- Description  : DB privileges list
-    -- Parameters   : 1 - fully qualified name like (/GRANTEE/PRIVILEGE/OWNER)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Parameters   : /GRANTEE/PRIVILEGE/OWNER
 -- ------------------------------------------------------------------------------------------------
     -- Name         : LSIC
     -- Description  : Indexed columns list
-    -- Parameters   : 1 - fully qualified name like (/SCHEMA/TABLE/INDEX/COLUMN)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Parameters   : /SCHEMA/TABLE/INDEX/COLUMN
 -- ------------------------------------------------------------------------------------------------
     -- Name         : LSS
     -- Description  : DB objects statistics
-    -- Parameters   : 1 - fully qualified name like (/TYPE/SCHEMA/NAME)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Parameters   : /SCHEMA/NAME
 -- ------------------------------------------------------------------------------------------------
     -- Name         : LSSYS
     -- Description  : DB data dictionary listing
-    -- Parameters   : 1 - fully qualified name like (/NAME)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Parameters   : /NAME
 -- ------------------------------------------------------------------------------------------------
     -- Name         : OEM
     -- Description  : OEM Hourly/Daily Metrics
@@ -77,21 +59,19 @@
 -- ------------------------------------------------------------------------------------------------
     -- Name         : PS
     -- Description  : DB sessions - inactive/active with longops info
-    -- Parameters   : 1 - fully qualified name like (/SERVICE/SERVER/INSTANCE/USER/OSUSER/MACHINE)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Parameters   : /SERVICE/SERVER/INSTANCE/USER/OSUSER/MACHINE
 -- ------------------------------------------------------------------------------------------------
     -- Name         : SQL
     -- Description  : DB queries with search on sql_text (not sql_fulltext)
-    -- Parameters   : 1 - fully qualified name like (/SERVICE/INSTANCE/USER/MODULE/PROFILE)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Parameters   : /SERVICE/INSTANCE/USER/MODULE/PROFILE
+-- ------------------------------------------------------------------------------------------------
+    -- Name         : SQL
+    -- Description  : DB queries with search on sql_text (not sql_fulltext)
+    -- Parameters   : /SERVICE/INSTANCE/USER/MODULE/PROFILE
 -- ------------------------------------------------------------------------------------------------
     -- Name         : SQLBL
     -- Description  : SQL baselines
-    -- Parameters   : 1 - fully qualified name like (/USER/MODULE)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Parameters   : NONE
 -- ------------------------------------------------------------------------------------------------
     -- Name         : SQLP
     -- Description  : Execution plans for SQL_ID

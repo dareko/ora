@@ -1,9 +1,7 @@
 --+------------------------------------------------------------------------------------------------
     -- Name         : PS
     -- Description  : DB sessions - inactive/active with longops info
-    -- Parameters   : 1 - fully qualified name like (/SERVICE/SERVER/INSTANCE/USER/OSUSER/MACHINE)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Parameters   : /SERVICE/SERVER/INSTANCE/USER/OSUSER/MACHINE
 -- ------------------------------------------------------------------------------------------------
 -- Author       : Dariusz Owczarek (mailto:dariusz.owczarek@edba.eu)
 -- Copyright    : Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 
@@ -17,7 +15,7 @@
 
 with q as
 (/* Q PS */
-select s.service_name, i.instance_name, decode(s.server, 'DEDICATED', s.server, 'SHARED') server
+select /*+ DRIVING_SITE(s) */ s.service_name, i.instance_name, decode(s.server, 'DEDICATED', s.server, 'SHARED') server
   , s.username, s.osuser, s.machine, s.program, s.status, s.state, s.event
   , s.sid, s.serial#
   , t.sql_id, t.sql_text, sl.opname, sl.time_remaining, sl.elapsed_seconds, sl.sofar, sl.totalwork

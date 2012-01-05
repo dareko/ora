@@ -21,7 +21,7 @@ select s.service, i.instance_name, ss.parsing_schema_name, ss.module
   , s.last_load_time, s.last_active_time, s.fetches, s.executions
   , s.rows_processed, s.cpu_time, s.elapsed_time, s.buffer_gets, s.disk_reads, s.sorts 
   , s.loads, s.invalidations
-  --, s.is_bind_sensitive, s.is_bind_aware
+  , s.is_bind_sensitive, s.is_bind_aware
   , s.sql_text
 from gv$sql&&2 s
   join gv$instance&&2 i
@@ -42,7 +42,7 @@ select upper('/'||service||'/'||instance_name||'/'||parsing_schema_name
     ||'LAST_LOAD: '||last_load_time
     ||', LAST ACTIVE: '||to_char(last_active_time, 'yyyy-mm-dd/hh24:mi:ss')
     ||', LOADS: '||loads||', INVALIDATIONS; '||invalidations
-    --||chr(10)||'BIND SENS./AWARE: '||is_bind_sensitive||'/'||is_bind_aware
+    ||chr(10)||'BIND SENS./AWARE: '||is_bind_sensitive||'/'||is_bind_aware
     ||chr(10)||sql_text dsc
 from q
 where sql_id = '&&1'

@@ -1,9 +1,7 @@
 -- ------------------------------------------------------------------------------------------------
     -- Name         : Q
     -- Description  : Quality Oracle Scripts template
-    -- Parameters   : 1 - fully qualified name like (/SERVICE/SERVER/INSTANCE/USER/OSUSER/MACHINE)
-    --              : 2 - optional: database link
-    --              : 3 - optional: rows limit
+    -- Parameters   : /SERVICE/SERVER/INSTANCE/USER/OSUSER/MACHINE
 -- ------------------------------------------------------------------------------------------------
 -- Author       : Dariusz Owczarek (mailto:dariusz.owczarek@edba.eu)
 -- Copyright    : Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 
@@ -22,10 +20,21 @@
 --break on c1 skip page
 --compute sum count of c2 on c1
 
-select ...
-from ...
+with q as
+(/* Q ??? */
+select 
+from ???&&2 ?
+where 
+order by 
+/* QEND */)
+select upper('/'||???) fqname
+  ,  info
+  ,  dsc
+from q
 where
-  regexp_like('&param', '^.a{1,2}.+$', 'i');
+  upper('/'||???)
+  like upper('%/&&1%')
+  and (&&3 = 0 or rownum <= &&3)
 ;
 
 --clear computes
