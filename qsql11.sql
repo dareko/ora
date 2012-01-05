@@ -1,4 +1,4 @@
---+------------------------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------
     -- Name         : SQL
     -- Description  : DB queries with search on sql_text (not sql_fulltext)
     -- Parameters   : /SERVICE/INSTANCE/USER/MODULE/PROFILE
