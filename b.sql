@@ -52,16 +52,25 @@ Rem      OR OTHER DEALINGS IN THE SOFTWARE.
 Rem
 
 Rem TODO
-Rem * Unix/Windows/Mac
 Rem * handling wrong query name
+Rem * @b mystat . as non-privileged user
+Rem * ddl ???
 
-col status for a10
-col feature_name for a60
-col stat_name for a60
-col target_desc for a30
-col sw_date for a14
 Rem col created ???
 Rem col last_ddl_time hea LAST|DDL_TIME -> ???
+
+set buf lastsql
+cl buff
+i
+select
+  s.prev_sql_id sql_id
+, s.prev_child_number child_number
+, s.prev_hash_value hash_value
+from
+  v$session s
+where
+  sid = (select max(m.sid) from v$mystat m)
+.
 
 set buf tbs2
 cl buff
@@ -77,4 +86,10 @@ order by
   tablespace_name
 .
 
-@bx &1 &2
+set feedback off
+set timing off
+
+@../blackbox/bx &1 &2
+
+set feedback on
+set timing on

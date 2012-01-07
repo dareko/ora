@@ -1,71 +1,93 @@
--- ------------------------------------------------------------------------------------------------
--- Scripts
-----------
--- ------------------------------------------------------------------------------------------------
-    -- Name         : Q
-    -- Description  : Master script
-    -- Parameters   : 1 - script name
-    --              : 2 - <fully qualified name like>@<optional: database link>#<optional: rows limit>
--- ------------------------------------------------------------------------------------------------
-    -- Name         : DDL
-    -- Description  : DB objects DDL
-    -- Parameters   : /TYPE/SCHEMA/NAME
--- ------------------------------------------------------------------------------------------------
-    -- Name         : DF
-    -- Description  : DB schema size
-    -- Parameters   : /SCHEMA/TYPE/NAME
--- ------------------------------------------------------------------------------------------------
-    -- Name         : JOBS
-    -- Description  : DB scheduler jobs listing
-    -- Parameters   : /OWNER/NAME/SUBNAME
--- ------------------------------------------------------------------------------------------------
-    -- Name         : KILL
-    -- Description  : DB sessions with kill seesion statements
-    -- Parameters   : /SERVICE/INSTANCE/USER/OSUSER/MACHINE
--- ------------------------------------------------------------------------------------------------
-    -- Name         : LS
-    -- Description  : DB objects list
-    -- Parameters   : /TYPE/SCHEMA/NAME
--- ------------------------------------------------------------------------------------------------
-    -- Name         : LSCC
-    -- Description  : Constraints columns list
-    -- Parameters   : /SCHEMA/TABLE/CONSTRAINT/COLUMN
--- ------------------------------------------------------------------------------------------------
-    -- Name         : LSG
-    -- Description  : DB privileges list
-    -- Parameters   : /GRANTEE/PRIVILEGE/OWNER
--- ------------------------------------------------------------------------------------------------
-    -- Name         : LSIC
-    -- Description  : Indexed columns list
-    -- Parameters   : /SCHEMA/TABLE/INDEX/COLUMN
--- ------------------------------------------------------------------------------------------------
-    -- Name         : LSS
-    -- Description  : DB objects statistics
-    -- Parameters   : /SCHEMA/NAME
--- ------------------------------------------------------------------------------------------------
-    -- Name         : LSSYS
-    -- Description  : DB data dictionary listing
-    -- Parameters   : /NAME
--- ------------------------------------------------------------------------------------------------
-    -- Name         : OEM
-    -- Description  : OEM Hourly/Daily Metrics
-    -- Parameters   : 1 - fully qualified metric name like (/METRIC_NAME/KEY_NAME)
-    --              : 2 - # hours or days
-    --              : 3 - hour or day
--- ------------------------------------------------------------------------------------------------
-    -- Name         : PS
-    -- Description  : DB sessions - inactive/active with longops info
-    -- Parameters   : /SERVICE/SERVER/INSTANCE/USER/OSUSER/MACHINE
--- ------------------------------------------------------------------------------------------------
-    -- Name         : SQL
-    -- Description  : DB queries with search on sql_text (not sql_fulltext)
-    -- Parameters   : /SERVICE/INSTANCE/USER/MODULE/PROFILE
--- ------------------------------------------------------------------------------------------------
-    -- Name         : SQLBL
-    -- Description  : SQL baselines
-    -- Parameters   : NONE
--- ------------------------------------------------------------------------------------------------
-    -- Name         : SQLP
-    -- Description  : Execution plans for SQL_ID
-    -- Parameters   : 1 - SQL_ID
--- ------------------------------------------------------------------------------------------------
+
+Quality Oracle Scripts
+======================
+
+    Version 0.1
+    github.com/dareko/ora
+
+Quality Oracle Scripts is a bundle of SQL*Plus scripts for monitoring and troubleshooting
+Oracle databases. For further information, see [http://www.edba.eu] [1].
+
+This software is provided "AS IS" without warranty of any kind, express or implied.
+
+[1]: http://www.edba.eu     "www.edba.eu"
+
+Author
+------
+
+Dariusz Owczarek [dariusz.owczarek@edba.eu] [2]
+
+[2]: mailto:dariusz.owczarek@edba.eu
+
+Usage
+-----
+
+    @q script like_condition[@db_link][#rows_limit]
+
+Installation
+------------
+
+* Simply obtain a copy of ``ora`` directory, which may be located anywhere
+  on your system, for example in the home directory
+
+* Add ``ora`` directory to you SQLPATH variable:
+
+    export SQLPATH="$HOME/ora"
+
+* Open ``$HOME/ora/login.sql`` login script and modify if needed
+
+* (OPTIONAL) Create database links in order to query several DBs without reconnecting
+
+* Using ``SQL*Plus``, log on as user who has ``DBA`` or ``SELECT_CATALOG_ROLE`` privileges
+
+License and Copyright
+---------------------
+
+Copyright (c) 2007-2012 by Dariusz Owczarek. All rights reserved. 
+This file is part of Quality Oracle Scripts. The Quality Oracle Scripts is
+a free software; you can redistribute it and/or adapt it under the terms
+of the [Creative Commons Attribution 3.0 Unported license] [3].
+
+[3]: http://creativecommons.org/licenses/by/3.0/ "CC BY 3.0"
+
+Scripts
+-------
+
+@q ddl /object_type/owner/name
+: Database objects DDL statements
+
+
+@q jobs /owner/name/subname
+: Database scheduler jobs listing
+
+
+@q kill /service/server/instance/user/osuser/machine
+: Kill session statements
+
+
+@q ls /object_type/owner/name
+: Database objects listing
+
+
+@q lsg /grantee/privilege/owner
+: Database privileges listing
+
+
+@q lsic /owner/table/index/column
+: Object indexed columns listing
+
+
+@q lss /owner/name
+: Object statistics information
+
+
+@q lssys /name
+: Database dictionary listing
+
+
+@q ps /service/server/instance/user/osuser/machine/program/status
+: Database sessions listing with longops info
+
+
+@q sql /service/instance/user/module/profile/sql_text
+: Database queries listing

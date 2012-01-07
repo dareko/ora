@@ -1,22 +1,64 @@
---+------------------------------------------------------------------------------------------------
--- ------------------------------------------------------------------------------------------------
--- Scripts
-----------
--- ------------------------------------------------------------------------------------------------
-    -- Name         : Q
-    -- Description  : Master script
-    -- Parameters   : 1 - script name
-    --              : 2 - <fully qualified name like>@<optional: database link>#<optional: rows limit>
--- ------------------------------------------------------------------------------------------------
--- Author       : Dariusz Owczarek (mailto:dariusz.owczarek@edba.eu)
--- Copyright    : Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 
---                This file is part of Quality Oracle Scripts.
---                The Quality Oracle Scripts is a free software;
---                you can redistribute it and/or adapt it under the terms
---                of the Creative Commons Attribution 3.0 Unported license.
--- Notes        : This software is provided "AS IS" without warranty
---                of any kind, express or implied.
--- ------------------------------------------------------------------------------------------------
+/* BEGIN OVERVIEW
+
+Quality Oracle Scripts
+======================
+
+    Version 0.1
+    github.com/dareko/ora
+
+Quality Oracle Scripts is a bundle of SQL*Plus scripts for monitoring and troubleshooting
+Oracle databases. For further information, see [http://www.edba.eu] [1].
+
+This software is provided "AS IS" without warranty of any kind, express or implied.
+
+[1]: http://www.edba.eu     "www.edba.eu"
+
+Author
+------
+
+Dariusz Owczarek [dariusz.owczarek@edba.eu] [2]
+
+[2]: mailto:dariusz.owczarek@edba.eu
+
+Usage
+-----
+
+    @q script like_condition[@db_link][#rows_limit]
+
+Installation
+------------
+
+* Simply obtain a copy of ``ora`` directory, which may be located anywhere
+  on your system, for example in the home directory
+
+* Add ``ora`` directory to you SQLPATH variable:
+
+    export SQLPATH="$HOME/ora"
+
+* Open ``$HOME/ora/login.sql`` login script and modify if needed
+
+* (OPTIONAL) Create database links in order to query several DBs without reconnecting
+
+* Using ``SQL*Plus``, log on as user who has ``DBA`` or ``SELECT_CATALOG_ROLE`` privileges
+
+END OVERVIEW */
+
+/* BEGIN LICENSE
+
+License and Copyright
+---------------------
+
+Copyright (c) 2007-2012 by Dariusz Owczarek. All rights reserved. 
+This file is part of Quality Oracle Scripts. The Quality Oracle Scripts is
+a free software; you can redistribute it and/or adapt it under the terms
+of the [Creative Commons Attribution 3.0 Unported license] [3].
+
+[3]: http://creativecommons.org/licenses/by/3.0/ "CC BY 3.0"
+
+Scripts
+-------
+
+END LICENSE */
 
 define q_dba_version_scripts='jobs11,sql11,kill11'
 

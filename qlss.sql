@@ -1,23 +1,24 @@
---+------------------------------------------------------------------------------------------------
-    -- Name         : LSS
-    -- Description  : DB objects statistics
-    -- Parameters   : /SCHEMA/NAME
--- ------------------------------------------------------------------------------------------------
--- Author       : Dariusz Owczarek (mailto:dariusz.owczarek@edba.eu)
--- Copyright    : Copyright (c) 2007-2011 Dariusz Owczarek. All rights reserved. 
---                This file is part of Quality Oracle Scripts.
---                The Quality Oracle Scripts is a free software;
---                you can redistribute it and/or adapt it under the terms
---                of the Creative Commons Attribution 3.0 Unported license.
--- Notes        : This software is provided "AS IS" without warranty
---                of any kind, express or implied.
--- ------------------------------------------------------------------------------------------------
+/*+------------------------------------------------------------------------------------------------
+
+@q lss /owner/name
+: Object statistics information
+
+*/-------------------------------------------------------------------------------------------------
+/* Author       : Dariusz Owczarek (mailto:dariusz.owczarek@edba.eu)
+   Copyright    : Copyright (c) 2007-2012 Dariusz Owczarek. All rights reserved. 
+                  This file is part of Quality Oracle Scripts.
+                  The Quality Oracle Scripts is a free software;
+                  you can redistribute it and/or adapt it under the terms
+                  of the Creative Commons Attribution 3.0 Unported license.
+   Notes        : This software is provided "AS IS" without warranty
+                  of any kind, express or implied.
+*/-------------------------------------------------------------------------------------------------
 
 with q as
-(/* Q LSS */
+(/* QLSS */
 select /*+ DRIVING_SITE(o) */ o.owner, o.object_type, o.object_name
-, ts.partition_name, ts.num_rows, ts.blocks, ts.avg_row_len, ts.sample_size
-, ts.last_analyzed, ts.stattype_locked, ts.stale_stats
+  , ts.partition_name, ts.num_rows, ts.blocks, ts.avg_row_len, ts.sample_size
+  , ts.last_analyzed, ts.stattype_locked, ts.stale_stats
 from dba_objects&&2 o
   left outer join dba_tab_statistics&&2 ts on (ts.owner = o.owner and ts.table_name = o.object_name)
 where o.object_type = 'TABLE'
