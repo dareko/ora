@@ -23,7 +23,13 @@ Dariusz Owczarek [dariusz.owczarek@edba.eu] [2]
 Usage
 -----
 
+* Text Output
+
     @q script like_condition[@db_link][#rows_limit]
+
+* HTML Output
+
+    @h script like_condition[@db_link][#rows_limit]
 
 Installation
 ------------
@@ -33,7 +39,7 @@ Installation
 
 * Add ``ora`` directory to you SQLPATH variable:
 
-    export SQLPATH="$HOME/ora"
+    ``export SQLPATH="$HOME/ora"``
 
 * Open ``$HOME/ora/login.sql`` login script and modify if needed
 
