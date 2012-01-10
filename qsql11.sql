@@ -44,7 +44,7 @@ select upper('/'||service||'/'||instance_name||'/'||parsing_schema_name
     ||chr(10)||'BIND SENS./AWARE: '||is_bind_sensitive||'/'||is_bind_aware
     ||chr(10)||sql_text dsc
 from q
-where sql_id = '&&1'
-  or (sql_text like '%&&1%' and sql_text not like '%/* Q % */%' and sql_text not like '%/* Q */%')
+where (sql_id = '&&1'
+  or (sql_text like '%&&1%' and sql_text not like '%/* Q % */%' and sql_text not like '%/* Q */%'))
   and (&&3 = 0 or rownum <= &&3)
 ;

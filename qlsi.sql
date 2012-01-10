@@ -1,6 +1,6 @@
 /*+------------------------------------------------------------------------------------------------
 
-@q lsic /owner/table/index/column
+@q lsi /owner/table/index/column
 : Object indexed columns listing
 
 */-------------------------------------------------------------------------------------------------
@@ -15,7 +15,7 @@
 */-------------------------------------------------------------------------------------------------
 
 with q as
-(/* QLSIC */
+(/* QLSI */
 select /*+ DRIVING_SITE(c) */ c.table_owner, c.table_name, c.index_name, c.column_name, c.column_position
 from dba_ind_columns&&2 c
 order by c.table_owner, c.table_name, c.index_name, c.column_position

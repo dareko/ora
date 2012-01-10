@@ -92,7 +92,7 @@ select /* Q */ to_char(sysdate,'dd.mm.yyyy hh24:mi:ss') dba_date
   , decode(instr(',&&q_dba_version_scripts,'
                 ,',&&1'||substr(c.value, 1, instr(c.value, '.')-1)||','), 0, '&&1'
           ,'&&1'||substr(c.value, 1, instr(c.value, '.')-1)) dba_script
-  , '@'||d.property_value db_link
+  , nvl('&&q_db_link', '@'||d.property_value) db_link
 from database_compatible_level&&q_db_link c, database_properties&&q_db_link d
 where d.property_name = 'GLOBAL_DB_NAME';
 

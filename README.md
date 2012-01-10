@@ -79,7 +79,7 @@ Scripts
 : Database privileges listing
 
 
-@q lsic /owner/table/index/column
+@q lsi /owner/table/index/column
 : Object indexed columns listing
 
 
@@ -89,6 +89,14 @@ Scripts
 
 @q lssys /name
 : Database dictionary listing
+
+
+@q oemlsm /target_type/metric_label/column_label/metric_type
+: OEM Metrics Listing
+
+
+@q oemmd /metric_name/key_name
+: OEM Daily Metrics
 
 
 @q ps /service/server/instance/user/osuser/machine/program/status
